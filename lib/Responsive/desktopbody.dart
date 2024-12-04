@@ -3,10 +3,8 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio_app/Responsive/PDF/resume.dart';
 
 import 'package:portfolio_app/config/colors.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Desktopbody extends StatefulWidget {
