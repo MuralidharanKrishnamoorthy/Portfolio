@@ -219,7 +219,7 @@ class _DesktopbodyState extends State<Desktopbody>
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: screenheight * 0.05),
+                      padding: EdgeInsets.only(top: screenheight * 0.06),
                       child: Row(
                         children: <Widget>[
                           ElevatedButton.icon(
@@ -295,6 +295,21 @@ class _DesktopbodyState extends State<Desktopbody>
                               height: screenwidth * 0.03,
                             ),
                           ),
+                          SizedBox(width: screenwidth * 0.01),
+                          InkWell(
+                            onTap: () async {
+                              final Uri url = Uri.parse(
+                                  'mailto:muralikrishnamoorthy27@gmail.com?subject=Subject Here&body=Body of the email');
+                              if (!await launchUrl(url)) {
+                                throw Exception("Could not open Link");
+                              }
+                            },
+                            child: Image.asset(
+                              'images/mail.png',
+                              width: screenwidth * 0.03,
+                              height: screenwidth * 0.03,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -308,6 +323,7 @@ class _DesktopbodyState extends State<Desktopbody>
                         itemBuilder: (context, index) {
                           final logos = [
                             'images/flutter.png',
+                            'images/Dart.png',
                             'images/java.png',
                             'images/firebase.png',
                             'images/nodejs.png',
@@ -711,8 +727,13 @@ class _DesktopbodyState extends State<Desktopbody>
                                         Align(
                                           alignment: Alignment.bottomRight,
                                           child: TextButton(
-                                            onPressed: () {
-                                              // Add your navigation logic here
+                                            onPressed: () async {
+                                              final Uri url = Uri.parse(
+                                                  'https://github.com/MuralidharanKrishnamoorthy/portfolio.git');
+                                              if (!await launchUrl(url)) {
+                                                throw Exception(
+                                                    'Could not Load');
+                                              }
                                             },
                                             style: TextButton.styleFrom(
                                               padding: EdgeInsets.symmetric(
